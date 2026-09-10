@@ -11,6 +11,12 @@ Exercícios práticos de Orientação a Objetos em PHP, desenvolvidos como prepa
 
 Cada exercício reforça um conceito antes de avançar para o próximo, seguindo pré-requisitos do próprio framework (classe, instância, visibilidade, construtor, herança, método estático).
 
+### Exercícios realizados
+- **Pessoa:** criação de objetos, propriedades, método de apresentação, construtor, verificação de maioridade e aniversário.
+- **Conta bancária:** propriedade privada, depósito, saque, validação de valores e consulta do saldo com getter.
+- **Promoção de construtor:** propriedades declaradas nos parâmetros do `__construct()` (PHP 8+), com tipos `string`, `int` e `float`; getters `getTitular()` e `getSaldo()`. Arquivo: `PromocaoConstrutor.php`.
+- **stdClass:** objeto genérico com `new stdClass()`, conversão de array com `(object)` e `json_decode()`, comparado com uma classe `Pessoa` própria. Arquivo: `StdClassExemplo.php`.
+
 ### Como usar
 1. Execute qualquer arquivo com `php nome-do-arquivo.php`
 2. Ou coloque no htdocs e abra pelo navegador
@@ -23,9 +29,12 @@ Cada exercício reforça um conceito antes de avançar para o próximo, seguindo
 - Getters e setters como validação de dados (ex: `depositar()` só aceita valores positivos)
 - Diferença entre `return` (devolve valor reutilizável) e `echo` (apenas imprime)
 - Revisão de funções: declaração, parâmetros e `return`
+- Promoção de construtor (PHP 8+): visibilidade e tipo no parâmetro, sem repetir propriedade e atribuição
+- Getters (`getSaldo()`, `getTitular()`) para ler propriedades `private`
+- `stdClass` para dados soltos (JSON, array convertido) versus classe própria para regras de negócio
 
 ### Tecnologias
-- PHP
+- PHP 8+
 - Git / GitHub
 
 ---
@@ -36,6 +45,12 @@ Cada exercício reforça um conceito antes de avançar para o próximo, seguindo
 Hands-on Object-Oriented Programming exercises in PHP, built as preparation to work with the Adianti Framework, which relies heavily on concepts like visibility and magic methods in its ORM (`TRecord`).
 
 Each exercise reinforces one concept before moving to the next, following the framework's own prerequisites (class, instance, visibility, constructor, inheritance, static method).
+
+### Completed exercises
+- **Person:** object creation, properties, an introduction method, constructor, age-of-majority check, and birthday.
+- **Bank account:** private property, deposits, withdrawals, value validation, and balance lookup with a getter.
+- **Constructor promotion:** properties declared in `__construct()` parameters (PHP 8+), with `string`, `int`, and `float` types; `getTitular()` and `getSaldo()` getters. File: `PromocaoConstrutor.php`.
+- **stdClass:** a generic object via `new stdClass()`, array casting with `(object)`, and `json_decode()`, compared with a dedicated `Pessoa` class. File: `StdClassExemplo.php`.
 
 ### How to use
 1. Run any file with `php file-name.php`
@@ -49,7 +64,10 @@ Each exercise reinforces one concept before moving to the next, following the fr
 - Getters and setters as data validation (e.g. `depositar()` only accepts positive values)
 - Difference between `return` (returns a reusable value) and `echo` (just prints)
 - Refresher on functions: declaration, parameters, and `return`
+- Constructor promotion (PHP 8+): visibility and type on the parameter, without repeating the property and assignment
+- Getters (`getSaldo()`, `getTitular()`) to read `private` properties
+- `stdClass` for loose data (JSON, cast arrays) versus a dedicated class for business rules
 
 ### Tech stack
-- PHP
+- PHP 8+
 - Git / GitHub
