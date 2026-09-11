@@ -19,10 +19,15 @@ Cada exercício reforça um conceito antes de avançar para o próximo, seguindo
 - **Associação:** dois objetos independentes; o pedido aponta para um cliente (`Cliente` no construtor) sem ser dono dele. Arquivo: `Associacao.php`.
 - **Agregação:** o departamento agrupa funcionários em um array; as pessoas são criadas fora e continuam existindo após `unset` do departamento. Arquivo: `Agregacao.php`.
 - **Composição:** o pedido cria e possui os itens (`new ItemPedido` dentro de `adicionarItem`); `calcularTotal()` soma os subtotais. Arquivo: `Composicao.php`.
+- **Trilha herança → abstração** (pasta `trilha-heranca-abstracao/`):
+  - **Herança + protected:** `ContaPoupanca extends Conta` usa `$saldo` da mãe. Arquivo: `trilha-heranca-abstracao/Heranca.php`.
+  - **Polimorfismo:** mesmo `taxa()` em duas filhas; `foreach` numa lista de `Conta`. Arquivo: `trilha-heranca-abstracao/Polimorfismo.php`.
+  - **Abstração + require_once:** `abstract class Conta`; filhas em arquivos separados. Pasta: `trilha-heranca-abstracao/` (`Conta.php`, `ContaCorrente.php`, `ContaPoupanca.php`, `Abstracao.php`).
 
 ### Como usar
 1. Execute qualquer arquivo com `php nome-do-arquivo.php`
-2. Ou coloque no htdocs e abra pelo navegador
+2. Trilha de herança: `php trilha-heranca-abstracao/Heranca.php`
+3. Ou coloque no htdocs e abra pelo navegador
 
 ### O que aprendi desenvolvendo este projeto
 - Estrutura básica de classe e objeto (`class`, `new`)
@@ -39,6 +44,10 @@ Cada exercício reforça um conceito antes de avançar para o próximo, seguindo
 - Tipo de parâmetro sendo outra classe (`Cliente`, `Funcionario`, `ItemPedido`)
 - Array de objetos, `foreach` e `$this->itens[]` / `$this->funcionarios[]`
 - No Adianti, associação lembra `belongsTo`; agregação/composição lembram coleções (`hasMany`)
+- Herança (`extends`) e visibilidade `protected` (filha acessa; código de fora não)
+- Polimorfismo: o tipo da variável é a mãe, o objeto na memória é a filha
+- Classe abstrata (`abstract class` / `abstract function`): contrato da mãe, `new` só nas filhas
+- `require_once` para carregar outra classe; se o arquivo faltar, o PHP para (`include_once` só avisa)
 
 ### Tecnologias
 - PHP 8+
@@ -61,10 +70,15 @@ Each exercise reinforces one concept before moving to the next, following the fr
 - **Association:** two independent objects; the order points to a customer without owning them. File: `Associacao.php`.
 - **Aggregation:** a department groups employees in an array; people are created outside and still exist after `unset` on the department. File: `Agregacao.php`.
 - **Composition:** the order creates and owns its line items (`new ItemPedido` inside `adicionarItem`); `calcularTotal()` sums subtotals. File: `Composicao.php`.
+- **Inheritance → abstraction trail** (folder `trilha-heranca-abstracao/`):
+  - **Inheritance + protected:** `ContaPoupanca extends Conta` uses the parent's `$saldo`. File: `trilha-heranca-abstracao/Heranca.php`.
+  - **Polymorphism:** the same `taxa()` on two children; `foreach` over a `Conta` list. File: `trilha-heranca-abstracao/Polimorfismo.php`.
+  - **Abstraction + require_once:** `abstract class Conta`; subclasses in separate files. Folder: `trilha-heranca-abstracao/` (`Conta.php`, `ContaCorrente.php`, `ContaPoupanca.php`, `Abstracao.php`).
 
 ### How to use
 1. Run any file with `php file-name.php`
-2. Or drop it into htdocs and open it in the browser
+2. Inheritance trail: `php trilha-heranca-abstracao/Heranca.php`
+3. Or drop it into htdocs and open it in the browser
 
 ### What I learned building this project
 - Basic class and object structure (`class`, `new`)
@@ -81,6 +95,10 @@ Each exercise reinforces one concept before moving to the next, following the fr
 - Another class as a parameter type (`Cliente`, `Funcionario`, `ItemPedido`)
 - Arrays of objects, `foreach`, and `$this->itens[]` / `$this->funcionarios[]`
 - In Adianti, association maps to `belongsTo`; aggregation/composition map to collections (`hasMany`)
+- Inheritance (`extends`) and `protected` visibility (child can access; outside code cannot)
+- Polymorphism: the variable's type is the parent, the object in memory is the child
+- Abstract class (`abstract class` / `abstract function`): parent contract, `new` only on children
+- `require_once` to load another class; missing file stops PHP (`include_once` only warns)
 
 ### Tech stack
 - PHP 8+
